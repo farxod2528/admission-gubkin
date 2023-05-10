@@ -1,0 +1,507 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Онлайн подача документов</title>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token"
+        content="sSGXWd2KbBIyBYScUQ_szMdLSstRSUVcTCXBegor8WDZW_EI5b0ZdGhjxtI0Y4-L8zs--TwGJzMvUJUcRnmnNQ==">
+
+    <link rel="stylesheet" href="assets/b1e267cb/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/a081753e/floor12-notification.css">
+    <link rel="stylesheet" href="assets/eaff0d93/cropper/dist/cropper.min.css">
+    <link rel="stylesheet" href="assets/4583e7d6/yii2-floor12-files.css">
+    <link rel="stylesheet" href="assets/46d40b52/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/bootstrap.main.css">
+    <link rel="stylesheet" href="css/font-awesome.main.css">
+    <script src="/assets/a081753e/floor12-notification.js"></script>
+</head>
+
+<body>
+    <script>yii2UploadRoute = '/files/default/upload'
+        yii2CsrfParam = '_csrf'
+        yii2CropperRoute = '/files/default/cropper'
+        yii2CropRoute = '/files/default/crop'
+        yii2RenameRoute = '/files/default/rename'
+        yii2FileFormToken = '7a8d0309dd12049b67d022448f6a60cd'
+        FileUploadedText = 'The file is uploaded'
+        FileSavedText = 'The file is saved'
+        FileRemovedText = 'The file is removed'
+        FilesRemovedText = 'The files are removed'
+        FileRenamedText = 'The file is renamed'
+        cropperHideCancel = 'false'</script>
+    <header>
+        <div class="container">
+            <div class="phone">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+998712000156">+998 71 200-01-56</a>
+
+            </div>
+        </div>
+    </header>
+    <nav class="navbar affix">
+        <div class="container">
+            <a href="/" class="logo"><img src="/img/logo.png" alt=""></a>
+            <ul class="menu">
+                <li><a href="https://gubkin.uz">Главная</a></li>
+                <li><a href="/information">Общая информация</a></li>
+                <li><a href="/send">Отправка документов</a></li>
+                <li><a href="/status">Проверка статуса</a></li>
+
+            </ul>
+            <button class="open_menu">
+                <i class="fa fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+    <div class="head">
+        <ul class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li>Онлайн подача документов</li>
+        </ul>
+        <h1>Онлайн подача документов</h1>
+    </div>
+
+
+
+
+
+    <form id="w0" action="/send" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf"
+            value="sSGXWd2KbBIyBYScUQ_szMdLSstRSUVcTCXBegor8WDZW_EI5b0ZdGhjxtI0Y4-L8zs--TwGJzMvUJUcRnmnNQ==">
+        <div class="grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-sname required">
+                            <label class="control-label" for="request-sname">Фамилия</label>
+                            <input type="text" id="request-sname" class="form-control" name="Request[sname]"
+                                maxlength="70" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-name required">
+                            <label class="control-label" for="request-name">Имя</label>
+                            <input type="text" id="request-name" class="form-control" name="Request[name]"
+                                maxlength="70" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-lname required">
+                            <label class="control-label" for="request-lname">Отчество</label>
+                            <input type="text" id="request-lname" class="form-control" name="Request[lname]"
+                                maxlength="70" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-bdate required">
+                            <label class="control-label" for="request-bdate">Дата рождения</label>
+                            <input type="date" id="request-bdate" class="form-control" name="Request[bdate]"
+                                aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-gender required">
+                            <label class="control-label">Пол</label>
+                            <input type="hidden" name="Request[gender]" value="">
+                            <div id="request-gender" role="radiogroup" aria-required="true"><label><input type="radio"
+                                        name="Request[gender]" value="0"> Мужчина</label>
+                                <label><input type="radio" name="Request[gender]" value="1"> Женшина</label>
+                            </div>
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-bplace required">
+                            <label class="control-label" for="request-bplace">Место проживания</label>
+                            <input type="text" id="request-bplace" class="form-control" name="Request[bplace]"
+                                maxlength="100" placeholder="Область" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-bcity required">
+                            <label class="control-label" for="request-bcity"></label>
+                            <input type="text" id="request-bcity" class="form-control" name="Request[bcity]"
+                                maxlength="100" placeholder="Район/Город" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-bstreet required">
+                            <label class="control-label" for="request-bstreet"></label>
+                            <input type="text" id="request-bstreet" class="form-control" name="Request[bstreet]"
+                                maxlength="120" placeholder="Махалля, улица, номер дома" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-nation_id required">
+                            <label class="control-label" for="request-nation_id">Национальность</label>
+                            <select id="request-nation_id" class="form-control" name="Request[nation_id]"
+                                aria-required="true">
+                                <option value="1">узбек</option>
+                                <option value="2">русский</option>
+                                <option value="3">таджик</option>
+                                <option value="4">татар</option>
+                                <option value="5">арман</option>
+                                <option value="6">казак</option>
+                                <option value="7">корец</option>
+                                <option value="8">каракалпак</option>
+                                <option value="9">теркмен</option>
+                                <option value="10">киргиз</option>
+                                <option value="11">ажарбайджан</option>
+                                <option value="12">украинец</option>
+                            </select>
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-pseria required">
+                            <label class="control-label" for="request-pseria">Паспортные данные</label>
+                            <input type="text" id="request-pseria" class="form-control" name="Request[pseria]"
+                                maxlength="3" placeholder="Серия" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-pnum required">
+                            <label class="control-label" for="request-pnum"></label>
+                            <input type="text" id="request-pnum" class="form-control" name="Request[pnum]"
+                                placeholder="Номер паспорта" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-documents">
+                            <label class="control-label" for="request-documents">Загрузите копию паспорта</label>
+
+                            <div class="floor12-files-widget-block" id="files-widget-block_621488779" data-ratio=""
+                                style="z-index: 16777271;">
+                                <button class="btn btn-default btn-sm btn-upload">
+                                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            style="height: 1em; vertical-align: -.125em;" aria-hidden="true" role="img"
+                                            viewBox="0 0 448 512">
+                                            <path fill="currentColor"
+                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                            </path>
+                                        </svg></div>
+                                    Upload
+                                </button>
+                                <input type="hidden" name="Request[documents_ids][]">
+                                <div class="floor12-files-widget-list floor12-files-widget-list-multi ui-sortable">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-done_id required">
+                            <label class="control-label" for="request-done_id">Оконченное образовательное
+                                учреждение</label>
+                            <select id="request-done_id" class="form-control" name="Request[done_id]"
+                                aria-required="true">
+                                <option value="1">школа</option>
+                                <option value="2">колледж</option>
+                                <option value="3">лицей</option>
+                            </select>
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-dseria required">
+                            <label class="control-label" for="request-dseria">Серия и номер аттестата или
+                                диплома</label>
+                            <input type="text" id="request-dseria" class="form-control" name="Request[dseria]"
+                                maxlength="50" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-dyear required">
+                            <label class="control-label" for="request-dyear">Год окончания</label>
+                            <input type="text" id="request-dyear" class="form-control" name="Request[dyear]"
+                                placeholder="гггг" aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-documents2">
+                            <label class="control-label" for="request-documents2">Копия аттестата или диплома</label>
+
+                            <div class="floor12-files-widget-block" id="files-widget-block_202745650" data-ratio=""
+                                style="z-index: 16777271;">
+                                <button class="btn btn-default btn-sm btn-upload">
+                                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            style="height: 1em; vertical-align: -.125em;" aria-hidden="true" role="img"
+                                            viewBox="0 0 448 512">
+                                            <path fill="currentColor"
+                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                            </path>
+                                        </svg></div>
+                                    Upload
+                                </button>
+                                <input type="hidden" name="Request[documents2_ids][]">
+                                <div class="floor12-files-widget-list floor12-files-widget-list-multi ui-sortable">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-phone required">
+                            <label class="control-label" for="request-phone">Номер телефона</label>
+                            <input type="text" id="request-phone" class="form-control" name="Request[phone]"
+                                aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group field-request-phonep required">
+                            <label class="control-label" for="request-phonep">Номер телефона родителя</label>
+                            <input type="text" id="request-phonep" class="form-control" name="Request[phonep]"
+                                aria-required="true">
+
+                            <div class="help-block"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input">
+                            <div class="form-group field-request-direc required">
+                                <label class="control-label" for="request-direc">Выберите профиль подготовки</label>
+                                <select id="request-direc" class="form-control" name="Request[direc]"
+                                    aria-required="true">
+                                    <option value="1">Геофизические методы исследования скважин (ГИ)</option>
+                                    <option value="2">Цифровой геоинжиниринг (ГЦ)</option>
+                                    <option value="3">Бурение нефтяных и газовых скважин (РБ)</option>
+                                    <option value="4">Эксплуатация и обслуживание объектов добычи нефти (РН)</option>
+                                    <option value="5">Эксплуатация и обслуживание объектов добычи газа,
+                                        газоконденсата и подземных хранилищ (РГ)
+                                    </option>
+                                    <option value="6">Сооружение и ремонт газонефтепроводов и
+                                        газонефтехранилищ (ТС)</option>
+                                    <option value="7">Эксплуатация и обслуживание объектов транспорта и
+                                        хранения нефти, газа и продуктов переработки (ТП)</option>
+                                    <option value="8">Технология бурения нефтяных и газовых скважин на суше и
+                                        море (РТ)</option>
+                                    <option value="9">Разработка и эксплуатация нефтяных и газовых
+                                        месторождений (РС)</option>
+                                    <option value="10">Экономика и проекты устойчивого развития энергетики
+                                        (ЭЭ)
+                                    </option>
+                                    <option value="11">Управление бизнесом в энергетике (ЭМ)</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="input">
+                <div class="form-group field-request-check1 required">
+                    <label class="control-label" for="request-check1">Я правильно заполнил всю информацию о себе и
+                        разрешаю использовать личную информацию в работе</label>
+                    <input type="hidden" name="Request[check1]" value="0"><input type="checkbox" id="request-check1"
+                        name="Request[check1]" value="1">
+
+                    <div class="help-block"></div>
+                </div>
+            </div>
+            <div class="input">
+                <div class="form-group field-request-check2 required">
+                    <label class="control-label" for="request-check2">Я ознакомлен(а) с постановлением Кабинета
+                        Министров Республики Узбекистан “Об утверждении Положения о порядке приёма, перевода,
+                        восстановления и отстранения от учёбы студентов в высших учебно-образовательных учреждениях” от
+                        20 июня 2017 года, №393. (https://lex.uz/docs/3244181#3245771)</label>
+                    <input type="hidden" name="Request[check2]" value="0"><input type="checkbox" id="request-check2"
+                        name="Request[check2]" value="1">
+
+                    <div class="help-block"></div>
+                </div>
+            </div>
+            <div class="info">
+                Если студент принят или учится на основе совместных образовательных программ (за исключением этой
+                совместной программы) по взаимному соглашению узбекских и зарубежных вузов, согласно постановлению
+                Кабинета Министров РУз №393 от 20 июня 2017 года “Об утверждении Положения о порядке приёма, перевода,
+                восстановления и отстранения от учёбы студентов в высших учебно-образовательных учреждениях” заявление
+                гражданина о переводе или восстановлении отклоняется.
+            </div>
+        </div>
+        <button type="submit" class="btnsubmit">Отправить</button>
+
+    </form>
+
+
+
+
+    <script src="assets/a17a4678/jquery.js"></script>
+    <script src="assets/eca9c331/yii.js"></script>
+    <script src="assets/eca9c331/yii.validation.js"></script>
+    <script src="assets/b1e267cb/jquery-ui.js"></script>
+    <script src="assets/eaff0d93/cropper/dist/cropper.min.js"></script>
+    <script src="assets/eaff0d93/simple-ajax-uploader/SimpleAjaxUploader.js"></script>
+    <script src="assets/4583e7d6/yii2-floor12-files.js"></script>
+    <script src="assets/46d40b52/js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>jQuery(function ($) {
+            Yii2FilesUploaderSet('files-widget-block_621488779', 'app\\models\\Request', 'documents', 'default')
+            Yii2FilesUploaderSet('files-widget-block_202745650', 'app\\models\\Request', 'documents2', 'default')
+            jQuery('#w0').yiiActiveForm([{ "id": "request-sname", "name": "sname", "container": ".field-request-sname", "input": "#request-sname", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Фамилия cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Фамилия must be a string.", "max": 70, "tooLong": "Фамилия should contain at most 70 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-name", "name": "name", "container": ".field-request-name", "input": "#request-name", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Имя cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Имя must be a string.", "max": 70, "tooLong": "Имя should contain at most 70 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-lname", "name": "lname", "container": ".field-request-lname", "input": "#request-lname", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Отчество cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Отчество must be a string.", "max": 70, "tooLong": "Отчество should contain at most 70 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-bdate", "name": "bdate", "container": ".field-request-bdate", "input": "#request-bdate", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Дата рождения cannot be blank." }); yii.validation.string(value, messages, { "message": "Дата рождения must be a string.", "skipOnEmpty": 1 }); } }, { "id": "request-gender", "name": "gender", "container": ".field-request-gender", "input": "#request-gender", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Пол cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Пол must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-bplace", "name": "bplace", "container": ".field-request-bplace", "input": "#request-bplace", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Область cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Область must be a string.", "max": 100, "tooLong": "Область should contain at most 100 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-bcity", "name": "bcity", "container": ".field-request-bcity", "input": "#request-bcity", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Район/Город cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Район/Город must be a string.", "max": 100, "tooLong": "Район/Город should contain at most 100 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-bstreet", "name": "bstreet", "container": ".field-request-bstreet", "input": "#request-bstreet", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Махалля, улица, номер дома cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Махалля, улица, номер дома must be a string.", "max": 120, "tooLong": "Махалля, улица, номер дома should contain at most 120 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-nation_id", "name": "nation_id", "container": ".field-request-nation_id", "input": "#request-nation_id", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Национальность cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Национальность must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-pseria", "name": "pseria", "container": ".field-request-pseria", "input": "#request-pseria", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Серия паспорта cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Серия паспорта must be a string.", "max": 3, "tooLong": "Серия паспорта should contain at most 3 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-pnum", "name": "pnum", "container": ".field-request-pnum", "input": "#request-pnum", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Номер паспорта cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Номер паспорта must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-done_id", "name": "done_id", "container": ".field-request-done_id", "input": "#request-done_id", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Окончившие образовательные учреждения cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Окончившие образовательные учреждения must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-dseria", "name": "dseria", "container": ".field-request-dseria", "input": "#request-dseria", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Серия и номер аттестата или диплома cannot be blank." }); yii.validation.regularExpression(value, messages, { "pattern": /^[A-Za-z0-9_\s]+$/u, "not": false, "message": "Пожалуйста, введите информации на латинском шрифте", "skipOnEmpty": 1 }); yii.validation.string(value, messages, { "message": "Серия и номер аттестата или диплома must be a string.", "max": 50, "tooLong": "Серия и номер аттестата или диплома should contain at most 50 characters.", "skipOnEmpty": 1 }); } }, { "id": "request-dyear", "name": "dyear", "container": ".field-request-dyear", "input": "#request-dyear", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Год окончания cannot be blank." }); } }, { "id": "request-phone", "name": "phone", "container": ".field-request-phone", "input": "#request-phone", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Номер телефон cannot be blank." }); yii.validation.string(value, messages, { "message": "Номер телефон must be a string.", "skipOnEmpty": 1 }); yii.validation.regularExpression(value, messages, { "pattern": /^(998)(\d{9})/, "not": false, "message": "Телефона, должно быть в формате 998XXXXXXXXX", "skipOnEmpty": 1 }); } }, { "id": "request-phonep", "name": "phonep", "container": ".field-request-phonep", "input": "#request-phonep", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Номер телефона родителя cannot be blank." }); yii.validation.string(value, messages, { "message": "Номер телефона родителя must be a string.", "skipOnEmpty": 1 }); yii.validation.regularExpression(value, messages, { "pattern": /^(998)(\d{9})/, "not": false, "message": "Телефона, должно быть в формате 998XXXXXXXXX", "skipOnEmpty": 1 }); } }, { "id": "request-direc", "name": "direc", "container": ".field-request-direc", "input": "#request-direc", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Направление cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Направление must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-check1", "name": "check1", "container": ".field-request-check1", "input": "#request-check1", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Check1 cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Check1 must be an integer.", "skipOnEmpty": 1 }); } }, { "id": "request-check2", "name": "check2", "container": ".field-request-check2", "input": "#request-check2", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Check2 cannot be blank." }); yii.validation.number(value, messages, { "pattern": /^\s*[+-]?\d+\s*$/, "message": "Check2 must be an integer.", "skipOnEmpty": 1 }); } }], []);
+        });</script>
+    <footer>
+        Филиала РГУ нефти и газа (НИУ) имени И.М.Губкина в городе Ташкенте</footer>
+
+
+    <div
+        style="display: block; position: absolute; visibility: hidden; overflow: hidden; margin: 0px; padding: 0px; opacity: 0; direction: ltr; z-index: 16777270; left: 140px; top: 1316px; width: 80px; height: 48px;">
+        <input type="file" name="file" multiple=""
+            style="position: absolute; right: 0px; margin: 0px; padding: 0px; font-size: 480px; font-family: sans-serif; cursor: pointer; height: 100%; z-index: 16777270;">
+    </div>
+    <div
+        style="display: none; position: relative; visibility: hidden; overflow: hidden; margin: 0px; padding: 0px; opacity: 0; direction: ltr; z-index: 16777270;">
+        <input type="file" name="file" multiple=""
+            style="position: absolute; right: 0px; margin: 0px; padding: 0px; font-size: 480px; font-family: sans-serif; cursor: pointer; height: 100%; z-index: 16777270;">
+    </div>
+    <div class="input-group mb-3">
+
+    </div>
+
+
+    <div id="yii2-file-title-editor" style="display: none;">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Filename:</span>
+            <input type="text" class="form-control" id="yii2-file-title-input" placeholder="Filename"
+                aria-describedby="basic-addon1">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="saveFileTitle()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1em; vertical-align: -.125em;"
+                        aria-hidden="true" focusable="false" data-prefix="fas" data-icon="save"
+                        class="svg-inline--fa fa-save fa-w-14" role="img" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z">
+                        </path>
+                    </svg> Save </button>
+                <button class="btn btn-default" type="button" onclick="hideYii2FileTitleEditor()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1em; vertical-align: -.125em;"
+                        aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
+                        class="svg-inline--fa fa-times fa-w-11" role="img" viewBox="0 0 352 512">
+                        <path fill="currentColor"
+                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                        </path>
+                    </svg> Cancel </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cropperModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Image editor</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="cropperArea"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-xs-6 text-left">
+                            <div class="btn-group" role="group">
+                                <button type="button" onclick="cropper.cropper('rotate', -90);"
+                                    class="btn btn-default"><svg aria-hidden="true" focusable="false"
+                                        style="height: 1em; vertical-align: -.125em;" role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z">
+                                        </path>
+                                    </svg></button>
+                                <button type="button" onclick="cropper.cropper('rotate', 90);"
+                                    class="btn btn-default"><svg aria-hidden="true" focusable="false"
+                                        style="transform: scale(-1,1); height: 1em; vertical-align: -.125em;" role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                            <div class="btn-group cropper-ratio-btn-group" role="group">
+                                <button type="button" class="btn btn-default"
+                                    onclick="cropper.cropper('setAspectRatio', 1);">
+                                    1/1
+                                </button>
+                                <button type="button" class="btn btn-default"
+                                    onclick="cropper.cropper('setAspectRatio', 3/4);">
+                                    3/4
+                                </button>
+                                <button type="button" class="btn btn-default"
+                                    onclick="cropper.cropper('setAspectRatio', 4/3);">
+                                    4/3
+                                </button>
+                                <button type="button" class="btn btn-default"
+                                    onclick="cropper.cropper('setAspectRatio', 16/9);">
+                                    16/9
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button type="button" id="cropper-btn-cancel" class="btn btn-default"
+                                onclick="stopCrop()">Cancel</button>
+                            <button type="button" class="btn btn-primary" onclick="cropImage()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
